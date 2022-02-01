@@ -54,7 +54,11 @@ function buildNavBar() {
     tag.innerText = sectionName;
     tag.addEventListener("click", function (e) {
       e.preventDefault();
-      document.getElementById(sectionNamePart).scrollIntoView();
+      document.getElementById(sectionNamePart).scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+        inline: "nearest",
+      });
     });
     li.appendChild(tag);
     navBar.appendChild(li);
